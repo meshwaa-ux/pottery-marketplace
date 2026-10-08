@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clayora - Pottery Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🏺 Clayora
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search pottery, mugs, vases..."
+        >
+        <button onclick="searchProducts()">🔍</button>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#community">Community</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-icons">
+        <button onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+        <button>👤</button>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            HANDMADE • UNIQUE • CREATIVE
+        </p>
+
+        <h1>
+            Beautiful Pottery,<br>
+            Made With <span>Love & Clay</span>
+        </h1>
+
+        <p>
+            Discover handmade pottery created by talented artists
+            and potters from around the world.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn"
+                    onclick="document.getElementById('shop').scrollIntoView()">
+                Shop Now
+            </button>
+
+            <button class="secondary-btn"
+                    onclick="document.getElementById('community').scrollIntoView()">
+                Explore Potters
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <p>EXPLORE</p>
+
+        <h2>Shop By Category</h2>
+
+    </div>
+
+    <div class="categories">
+
+        <div class="category">
+            <div>☕</div>
+            <h3>Mugs</h3>
+        </div>
+
+        <div class="category">
+            <div>🏺</div>
+            <h3>Vases</h3>
+        </div>
+
+        <div class="category">
+            <div>🍽️</div>
+            <h3>Plates</h3>
+        </div>
+
+        <div class="category">
+            <div>🥣</div>
+            <h3>Bowls</h3>
+        </div>
+
+        <div class="category">
+            <div>🪴</div>
+            <h3>Decor</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="section" id="shop">
+
+    <div class="section-title">
+
+        <p>OUR COLLECTION</p>
+
+        <h2>Featured Pottery</h2>
+
+    </div>
+
+    <div class="products" id="productContainer"></div>
+
+</section>
+
+
+<!-- ================= 360 VIEWER ================= -->
+
+<section class="viewer-section">
+
+    <div class="section-title">
+
+        <p>TRY IT BEFORE YOU BUY</p>
+
+        <h2>360° Pottery View</h2>
+
+        <span>
+            Drag the pottery to rotate it
+        </span>
+
+    </div>
+
+    <div class="viewer">
+
+        <button class="rotate-btn left"
+                onclick="rotateProduct(-1)">
+            ❮
+        </button>
+
+        <div class="pottery-360">
+
+            <div id="potteryObject">
+                🏺
+            </div>
+
+            <p>360°</p>
+
+        </div>
+
+        <button class="rotate-btn right"
+                onclick="rotateProduct(1)">
+            ❯
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMMUNITY ================= -->
+
+<section class="section community-section" id="community">
+
+    <div class="section-title">
+
+        <p>CLAYORA COMMUNITY</p>
+
+        <h2>Discover What Potters Are Creating</h2>
+
+        <span>
+            Follow artists, share designs and discover new pottery trends.
+        </span>
+
+    </div>
+
+
+    <div class="community-grid">
+
+        <div class="post">
+
+            <div class="post-header">
+
+                <div class="avatar">A</div>
+
+                <div>
+                    <strong>Aarav Pottery</strong>
+                    <small>@aaravclay</small>
+                </div>
+
+            </div>
+
+            <div class="post-image">
+                🏺
+            </div>
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">♡</button>
+
+                <button>💬</button>
+
+                <button>↗</button>
+
+            </div>
+
+            <p>
+                Trying a new earthy glaze today!
+            </p>
+
+            <span class="likes">
+                ❤️ 124 likes
+            </span>
+
+        </div>
+
+
+        <div class="post">
+
+            <div class="post-header">
+
+                <div class="avatar">M</div>
+
+                <div>
+                    <strong>Meera Ceramics</strong>
+                    <small>@meeraceramics</small>
+                </div>
+
+            </div>
+
+            <div class="post-image second">
+                ☕
+            </div>
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">♡</button>
+
+                <button>💬</button>
+
+                <button>↗</button>
+
+            </div>
+
+            <p>
+                Handmade coffee mugs inspired by nature 🌿
+            </p>
+
+            <span class="likes">
+                ❤️ 98 likes
+            </span>
+
+        </div>
+
+
+        <div class="post">
+
+            <div class="post-header">
+
+                <div class="avatar">R</div>
+
+                <div>
+                    <strong>Riya Clay Studio</strong>
+                    <small>@riyaclay</small>
+                </div>
+
+            </div>
+
+            <div class="post-image third">
+                🪴
+            </div>
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">♡</button>
+
+                <button>💬</button>
+
+                <button>↗</button>
+
+            </div>
+
+            <p>
+                Minimal handmade planters for your home.
+            </p>
+
+            <span class="likes">
+                ❤️ 76 likes
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div>
+        <span>🚚</span>
+        <h3>Fast Delivery</h3>
+        <p>Safe packaging for handmade pottery.</p>
+    </div>
+
+    <div>
+        <span>🔒</span>
+        <h3>Secure Payment</h3>
+        <p>Safe online payment and COD.</p>
+    </div>
+
+    <div>
+        <span>🏺</span>
+        <h3>Real Potters</h3>
+        <p>Buy directly from creative artists.</p>
+    </div>
+
+    <div>
+        <span>💯</span>
+        <h3>Quality Products</h3>
+        <p>Unique handmade products.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+    <div>
+
+        <h2>🏺 Clayora</h2>
+
+        <p>
+            A marketplace where pottery meets creativity.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h3>Shop</h3>
+
+        <a href="#shop">All Products</a>
+        <a href="#shop">Mugs</a>
+        <a href="#shop">Vases</a>
+        <a href="#shop">Decor</a>
+
+    </div>
+
+    <div>
+
+        <h3>Community</h3>
+
+        <a href="#community">Potters</a>
+        <a href="#community">Posts</a>
+        <a href="#community">Trending</a>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-modal" id="cartModal">
+
+    <div class="cart-box">
+
+        <button class="close"
+                onclick="closeCart()">
+            ×
+        </button>
+
+        <h2>Your Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+
+            Total:
+            ₹<span id="cartTotal">0</span>
+
+        </div>
+
+        <button class="checkout-btn"
+                onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

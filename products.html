@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Shop - PotteryHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🏺 PotteryHub
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="products.html">Shop</a>
+                </li>
+
+                <li>
+                    <a href="#">Community</a>
+                </li>
+
+                <li>
+                    <a href="#">Trending</a>
+                </li>
+
+            </ul>
+
+            <div class="nav-icons">
+
+                <span>🛒</span>
+
+                <span>
+                    Cart:
+                    <b id="cartCount">0</b>
+                </span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Shop Header -->
+
+    <section class="shop-header">
+
+        <h1>🛍️ Explore Our Pottery</h1>
+
+        <p>
+            Discover beautiful handmade pottery created
+            by talented artists.
+        </p>
+
+    </section>
+
+
+    <!-- Search -->
+
+    <section class="shop-controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search pottery..."
+            onkeyup="searchProducts()"
+        >
+
+
+        <select
+            id="categoryFilter"
+            onchange="filterProducts()"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="pots">
+                Clay Pots
+            </option>
+
+            <option value="mugs">
+                Mugs
+            </option>
+
+            <option value="planters">
+                Planters
+            </option>
+
+            <option value="vases">
+                Vases
+            </option>
+
+            <option value="ceramics">
+                Ceramics
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- Products -->
+
+    <main>
+
+        <section
+            class="shop-products"
+            id="productContainer"
+        >
+
+            <!-- JavaScript will add products here -->
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>🏺 PotteryHub</h3>
+
+        <p>
+            Buy • Create • Share • Inspire
+        </p>
+
+        <p>
+            © 2026 PotteryHub
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
