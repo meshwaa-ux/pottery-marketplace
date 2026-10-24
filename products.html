@@ -8,10 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="detail-body">
-
   <header class="site-header">
     <a class="site-brand" href="index.html">
-      <img src="images/clayora-logo.png" alt="Clayora logo">
+      <img src="images/clayora-logo.png" alt="Clayora">
       <span>Clayora</span>
     </a>
     <div class="header-actions">
@@ -19,20 +18,20 @@
       <button id="historyNav" type="button">📦 Orders</button>
       <button id="wishlistNav" type="button">♡ Wishlist</button>
       <button id="cartNav" type="button">🛒 Cart (<span id="cartCount">0</span>)</button>
-      <a class="nav-link" href="index.html">Continue shopping</a>
+      <a href="index.html#shop">Continue shopping</a>
     </div>
   </header>
 
   <main class="detail-main">
     <p class="breadcrumbs"><a href="index.html">Home</a> / Product details</p>
-    <div id="productDetail"><p>Loading product details...</p></div>
+    <div id="productDetail">Loading product details...</div>
     <section class="related-section">
       <h2>You may also like</h2>
       <div id="relatedGrid" class="product-grid"></div>
     </section>
   </main>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status"></div>
   <div id="modalRoot"></div>
   <script src="script.js"></script>
 </body>
