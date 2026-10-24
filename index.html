@@ -8,174 +8,194 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section id="loginPage" class="login-page">
-    <div class="login-brand">
-      <img class="login-logo" src="images/clayora-logo.png" alt="Clayora logo">
-      <h1>Clayora</h1>
-      <p>Handmade pottery, made with heart.</p>
+
+<div id="loginScreen" class="login-page">
+  <section class="login-brand">
+    <div class="login-logos">
+      <img src="images/clayora-logo.png" alt="Clayora logo">
+      <img src="images/clayora-logo.png" alt="Clayora pottery">
+      <img src="images/clayora-logo.png" alt="Clayora handmade">
     </div>
-    <div class="login-side">
-      <form id="loginForm" class="login-form">
-        <h2>Welcome to Clayora</h2>
-        <p>Sign in to explore handmade treasures.</p>
+    <h1>Clayora</h1>
+    <p>Handmade with love. Made to last.</p>
+  </section>
 
-        <label for="fullName">Full Name</label>
-        <input id="fullName" required minlength="2" maxlength="60" placeholder="Enter your full name" autocomplete="name">
+  <section class="login-side">
+    <form id="loginForm" class="login-form">
+      <h2>Welcome to Clayora</h2>
+      <p>Sign in to explore handmade pottery.</p>
 
-        <label for="email">Email Address</label>
-        <input id="email" type="email" required placeholder="Enter your email" autocomplete="email">
+      <label for="loginName">Full name</label>
+      <input id="loginName" name="name" required minlength="2"
+             autocomplete="name" placeholder="Enter your full name">
 
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" required pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}" placeholder="+91 9876543210" autocomplete="tel">
+      <label for="loginEmail">Email address</label>
+      <input id="loginEmail" name="email" type="email" required
+             autocomplete="email" placeholder="you@example.com">
 
-        <label for="password">Password</label>
-        <input id="password" type="password" required minlength="8" placeholder="Minimum 8 characters" autocomplete="current-password">
+      <label for="loginPhone">Phone number</label>
+      <input id="loginPhone" name="phone" type="tel" required
+             inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10"
+             placeholder="10-digit Indian mobile number">
 
-        <label for="otp">Demo OTP</label>
-        <div class="otp-row">
-          <input id="otp" required maxlength="6" pattern="[0-9]{6}" placeholder="Enter demo OTP">
-          <button id="getOtp" class="outline-btn" type="button">Get OTP</button>
-        </div>
-        <p class="small-note">Demo OTP: 123456. No SMS will be sent.</p>
-        <button class="primary-btn full-width" type="submit">Sign In</button>
-        <button id="guestLogin" class="outline-btn full-width" type="button">Continue as Guest</button>
-        <p class="small-note">Demo login only. Real authentication needs a secure backend.</p>
-      </form>
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" name="password" type="password"
+             required minlength="8" autocomplete="current-password"
+             placeholder="At least 8 characters">
+
+      <label for="loginOtp">Demo OTP</label>
+      <div class="otp-row">
+        <input id="loginOtp" name="otp" inputmode="numeric"
+               pattern="[0-9]{6}" maxlength="6" required
+               placeholder="Enter 6-digit OTP">
+        <button type="button" class="outline-btn" id="getOtp">Get demo OTP</button>
+      </div>
+
+      <p class="small-note" id="otpHint">
+        Demo only: click Get demo OTP to display a test OTP.
+      </p>
+
+      <button class="primary-btn full-width" type="submit">Sign in</button>
+    </form>
+  </section>
+</div>
+
+<div id="storeScreen" hidden>
+  <div class="announcement">Handmade pottery • Thoughtful gifts • Earth-friendly living</div>
+
+  <header class="site-header">
+    <a class="site-brand" href="index.html">
+      <img src="images/clayora-logo.png" alt="Clayora logo">
+      <span>Clayora</span>
+    </a>
+
+    <div class="search-box">
+      <input id="searchInput" type="search" placeholder="Search pots, mugs, vases...">
+      <button id="searchBtn" type="button">Search</button>
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <div class="header-actions">
+      <button id="profileNav" type="button">👤 Profile</button>
+      <button id="historyNav" type="button">📦 Orders</button>
+      <button id="wishlistNav" type="button">♡ Wishlist</button>
+      <button id="cartNav" type="button">🛒 Cart (<span id="cartCount">0</span>)</button>
+      <button id="logoutBtn" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <nav class="category-nav">
+    <button data-category="All">All products</button>
+    <button data-category="Mugs">Mugs</button>
+    <button data-category="Vases">Vases</button>
+    <button data-category="Planters">Planters</button>
+    <button data-category="Bowls">Bowls</button>
+    <button data-category="Dinnerware">Dinnerware</button>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">MADE BY HAND, CHOSEN BY HEART</p>
+      <h1>Bring the warmth of pottery home.</h1>
+      <p>Discover unique handmade ceramics made by independent artisans.</p>
+      <a href="#shop" class="primary-btn">Explore collection</a>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85"
+           alt="Handmade pottery collection">
     </div>
   </section>
 
-  <div id="shopPage" hidden>
-    <div class="announcement">Handmade with love · Find your next favourite piece</div>
-    <header class="site-header">
-      <a class="site-brand" href="index.html">
-        <img src="images/clayora-logo.png" alt="Clayora logo">
-        <span>Clayora</span>
-      </a>
-
-      <form id="searchForm" class="search-box">
-        <input id="searchInput" placeholder="Search mugs, vases, planters..." autocomplete="off">
-        <button type="submit">Search</button>
-        <div id="suggestions" class="suggestions"></div>
-      </form>
-
-      <div class="header-actions">
-        <button id="profileNav" type="button">👤 Profile</button>
-        <button id="historyNav" type="button">📦 Orders</button>
-        <button id="wishlistNav" type="button">♡ Wishlist <span id="wishCount">0</span></button>
-        <button id="cartNav" type="button">🛒 Cart <span id="cartCount">0</span></button>
-        <button id="logoutBtn" type="button">Sign out</button>
-      </div>
-    </header>
-
-    <nav class="category-nav">
-      <button data-category="All">All</button>
-      <button data-category="Mugs">Mugs</button>
-      <button data-category="Vases">Vases</button>
-      <button data-category="Planters">Planters</button>
-      <button data-category="Bowls">Bowls</button>
-      <button data-category="Decor">Home Decor</button>
-    </nav>
-
-    <main>
-      <section class="hero">
-        <div>
-          <p class="eyebrow">HANDMADE · HEARTFELT · TIMELESS</p>
-          <h1>Make room for something beautiful.</h1>
-          <p>Explore thoughtful pottery and handcrafted pieces made to bring warmth to your home.</p>
-          <a href="#products" class="primary-btn">Explore Collection</a>
-        </div>
-        <div class="hero-photo">
-          <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1000&q=85" alt="Handmade pottery">
-        </div>
-      </section>
-
-      <div class="offer-strip">
-        <strong>A little treat for you</strong>
-        <span>Use <b>CLAY10</b> on orders above ₹500 for 10% off.</span>
-      </div>
-
-      <section class="section-heading" id="products">
-        <div>
-          <p class="eyebrow">THE CLAYORA COLLECTION</p>
-          <h2>Find your handmade treasure</h2>
-          <p>Everyday pieces with a little extra character.</p>
-        </div>
-        <div class="filters">
-          <select id="sortSelect" aria-label="Sort products">
-            <option value="featured">Featured</option>
-            <option value="low">Price: Low to High</option>
-            <option value="high">Price: High to Low</option>
-            <option value="rating">Top Rated</option>
-          </select>
-          <select id="priceFilter" aria-label="Price filter">
-            <option value="all">All prices</option>
-            <option value="500">Under ₹500</option>
-            <option value="1000">Under ₹1,000</option>
-            <option value="2000">Under ₹2,000</option>
-          </select>
-        </div>
-      </section>
-
-      <p id="activeFilter" class="active-filter"></p>
-      <section id="productGrid" class="product-grid"></section>
-
-      <section class="artisan-section">
-        <div>
-          <p class="eyebrow">MEET THE MAKERS</p>
-          <h2>Made by hand, filled with heart.</h2>
-          <p>Celebrate the creativity and care behind handmade pottery.</p>
-        </div>
-        <div class="artisan-card">
-          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=700&q=80" alt="Potter making pottery">
-          <h3>Stories shaped in clay</h3>
-          <p>Discover the inspiration behind the craft.</p>
-          <button id="artisanPostBtn" class="outline-btn" type="button">Read our story</button>
-        </div>
-      </section>
-
-      <section class="community-section">
-        <p class="eyebrow">CLAYORA COMMUNITY</p>
-        <h2>Share your pottery moment</h2>
-        <form id="postForm" class="community-form">
-          <input id="postText" required minlength="5" maxlength="250" placeholder="Write a post about pottery...">
-          <button class="primary-btn" type="submit">Share post</button>
-        </form>
-        <div id="communityPosts" class="community-posts"></div>
-      </section>
-
-      <section class="feedback-section">
-        <h2>Tell us what you think</h2>
-        <form id="feedbackForm" class="feedback-form">
-          <label for="feedbackRating">Your rating</label>
-          <select id="feedbackRating" required>
-            <option value="">Choose rating</option>
-            <option value="5">★★★★★ Excellent</option>
-            <option value="4">★★★★ Very good</option>
-            <option value="3">★★★ Good</option>
-            <option value="2">★★ Fair</option>
-            <option value="1">★ Needs improvement</option>
-          </select>
-          <label for="feedbackText">Feedback</label>
-          <textarea id="feedbackText" required minlength="5" maxlength="500"></textarea>
-          <button class="primary-btn" type="submit">Send feedback</button>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-brand">
-        <img src="images/clayora-logo.png" alt="Clayora logo"><strong>Clayora</strong>
-      </div>
-      <p>Handmade pottery, made with heart.</p>
-      <p class="small-note">Demo store: no real payments or deliveries.</p>
-      <p>© 2026 Clayora</p>
-    </footer>
+  <div class="offer-strip">
+    <span>Timeless handmade pieces</span>
+    <b>Find something special for your home</b>
   </div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <div id="modalRoot"></div>
-  <script src="script.js"></script>
+  <main id="shop">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">THE CLAYORA COLLECTION</p>
+        <h2>Shop handmade pottery</h2>
+        <p>Each piece has its own character.</p>
+      </div>
+      <div class="filters">
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="rating">Top rated</option>
+        </select>
+        <select id="categorySelect" aria-label="Filter category">
+          <option value="All">All categories</option>
+          <option value="Mugs">Mugs</option>
+          <option value="Vases">Vases</option>
+          <option value="Planters">Planters</option>
+          <option value="Bowls">Bowls</option>
+          <option value="Dinnerware">Dinnerware</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="resultCount" class="active-filter"></div>
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <section class="artisan-section">
+    <div>
+      <p class="eyebrow">MADE BY REAL PEOPLE</p>
+      <h2>Every pot tells a story.</h2>
+      <p>Explore handcrafted pieces and support the people who make them.</p>
+    </div>
+    <div class="artisan-card">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80"
+           alt="Pottery being made by hand">
+      <h3>Made slowly, loved for years.</h3>
+      <p>Discover the beauty of handmade ceramics.</p>
+    </div>
+  </section>
+
+  <section class="community-section">
+    <h2>Clayora community</h2>
+    <p>Share your pottery ideas and inspiration.</p>
+    <form id="postForm" class="community-form">
+      <input id="postText" required maxlength="300"
+             placeholder="Share your pottery thought...">
+      <button class="primary-btn" type="submit">Share post</button>
+    </form>
+    <div id="communityPosts" class="community-posts"></div>
+  </section>
+
+  <section class="feedback-section">
+    <h2>We value your feedback</h2>
+    <form id="feedbackForm" class="feedback-form">
+      <label for="feedbackRating">Your rating</label>
+      <select id="feedbackRating" required>
+        <option value="">Choose a rating</option>
+        <option value="5">★★★★★ Excellent</option>
+        <option value="4">★★★★ Very good</option>
+        <option value="3">★★★ Good</option>
+        <option value="2">★★ Needs improvement</option>
+        <option value="1">★ Poor</option>
+      </select>
+      <label for="feedbackText">Your feedback</label>
+      <textarea id="feedbackText" required maxlength="500"
+                placeholder="Tell us what you think"></textarea>
+      <button class="primary-btn" type="submit">Submit feedback</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="images/clayora-logo.png" alt="Clayora logo">
+      <strong>Clayora</strong>
+    </div>
+    <p>Handmade pottery for thoughtful living.</p>
+    <p>Demo store: online payments and OTP are not connected to real services.</p>
+  </footer>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="modalRoot"></div>
+<script src="script.js"></script>
 </body>
 </html>
-
-        
